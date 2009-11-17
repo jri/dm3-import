@@ -49,7 +49,7 @@ function dm3_import() {
         for (var i = 0; i < documents.length; i++) {
             var doc = documents[i]
             if (doc && doc.type == "Topic") {
-                log("..... " + (i + 1) + ". " + doc.topic_type + " \"" + doc.fields[0].content + "\"")
+                log("..... " + (i + 1) + ". " + doc.topic_type + " \"" + topic_label(doc) + "\"")
                 save_document(doc)
             } else if (doc && doc.type == "Relation") {
                 log("..... " + (i + 1) + ". " + doc.rel_type)
