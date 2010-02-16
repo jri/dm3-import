@@ -2,14 +2,6 @@ function dm3_import() {
 
     this.init = function() {
         $("#special_select").append($("<option>").text("Import..."))
-        //
-        db.openAttachment = function(docId, attachment_name) {
-          this.last_req = this.request("GET", this.uri + encodeURIComponent(docId) + "/" + attachment_name);
-          if (this.last_req.status == 404)
-            return null;
-          CouchDB.maybeThrowError(this.last_req);
-          return JSON.parse(this.last_req.responseText);
-        }
     }
 
     this.handle_special_command = function(command) {
@@ -31,7 +23,7 @@ function dm3_import() {
         if (doc._attachments) {
             for (var attach in doc._attachments) {
                 try {
-                    var docs = db.openAttachment(doc._id, attach)
+                    var docs = JSON.parse(db.openAttachment(doc._id, attach))
                     log("Importing " + attach + " (" + docs.length + " documents)")
                     if (docs) {
                         import_documents(docs)
