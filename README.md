@@ -27,27 +27,48 @@ Installation
 4.  Upload changes to CouchDB:
         couchapp push http://localhost:5984/deepamehta3-db
 
+5.  Check if installation was successful: visit DeepaMehta 3 in your webbrowser (resp. press reload):  
+    <http://localhost:5984/deepamehta3-db/_design/deepamehta3/index.html>  
+    If you see the *Import...* command in the *Special* menu (upper right corner) everything is OK.
+
 
 Usage
 -----
 
-1.  Visit DeepaMehta 3 in your webbrowser (resp. press reload):
-        http://localhost:5984/deepamehta3-db/_design/deepamehta3/index.html
+1.  Create a topic (of any type) and attach the JSON formatted text files you want to import to it.
 
-2.  Create a topic (of any type) and attach the JSON formatted text files you want to import to it.
-
-3.  Choose "Import..." from the special menu (right hand side of the upper toolbar).  
+2.  Choose *Import...* from the special menu (upper right corner).  
     The import process starts immediately and requires no further interaction.
 
-4.  Reveal the imported topics, e.g. by a "Time" search.
+3.  Reveal the imported topics, e.g. by a "Time" search.
+
+
+Updating
+--------
+
+1.  Go to your DeepaMehta 3 installation directory:
+        cd deepamehta3
+
+2.  Update DeepaMehta 3 Import Plugin:
+        couchapp vendor update dm3-import
+
+3.  Upload changes to CouchDB:
+        couchapp push http://localhost:5984/deepamehta3-db
 
 
 Version History
 ---------------
 
-`v0.2` -- Dec  1, 2009 -- Basic functionality. Requires DeepaMehta 3 v0.2
+**v0.3** -- Mar 6, 2010
+
+* Compatible with DeepaMehta 3 v0.3
+
+**v0.2** -- Dec 1, 2009
+
+* Basic functionality
+* Requires DeepaMehta 3 v0.2
 
 
 ------------
 Jörg Richter  
-Dec 1, 2009
+Mar 6, 2009
